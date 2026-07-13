@@ -1,3 +1,6 @@
+const list = document.querySelector(".list");
+const input = document.querySelector("input");
+
 let todoList = [];
 let todoInputValue = "";
 let counter = 0;
@@ -29,11 +32,11 @@ function renderTodos() {
     .map(
       (element) =>
         `<li>
-    ${element.task}
-      <button class="todo__delete" onclick="deleteTodo(${element.id})"
-      x
-      </button>
-    </li>`,
+          ${element.task}
+          <button class="todo__delete" onclick="deleteTodo(${element.id})">
+            x
+          </button>
+        </li>`
     )
     .join("");
 }
