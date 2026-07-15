@@ -5,7 +5,7 @@ let todoList = [];
 let todoInputValue = "";
 let counter = 0;
 
-function onInputChange(event) {
+function onInputChange() {
   todoInputValue = event.target.value;
 }
 
@@ -34,9 +34,9 @@ function renderTodos() {
         `<li>
           ${element.task}
           <button class="todo__delete" onclick="deleteTodo(${element.id})">
-            x
+          x
           </button>
-        </li>`
+        </li>`,
     )
     .join("");
 }

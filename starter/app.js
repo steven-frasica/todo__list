@@ -9,6 +9,12 @@ function onInputChange(event) {
   todoInputValue = event.target.value;
 }
 
+function onInputKeyDown(event) {
+  if (event.key === "Enter" && todoInputValue) {
+    addTodo();
+  }
+}
+
 function addTodo() {
   if (!todoInputValue) {
     return;
@@ -34,9 +40,9 @@ function renderTodos() {
         `<li>
           ${element.task}
           <button class="todo__delete" onclick="deleteTodo(${element.id})">
-            x
+          x
           </button>
-        </li>`
+        </li>`,
     )
     .join("");
 }
